@@ -25,7 +25,7 @@ spec:
     - mountPath: /var/run/docker.sock
       name: docker-sock
   - name: kubectl
-    image: riya299/my-kubectl-image:tagname
+    image: riya299/my-kubectl-image:latest
     imagePullPolicy: IfNotPresent
     command:
     - cat
