@@ -1,0 +1,26 @@
+# ClusterRole with all permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: all-permissions
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]
+ 
+---
+ 
+# ClusterRoleBinding for the ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: all-permissions-binding
+subjects:
+- kind: ServiceAccount
+  name: admin-sa  # replace with your username
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: all-permissions
+  apiGroup: rbac.authorization.k8s.io
+ 
