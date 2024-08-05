@@ -85,16 +85,5 @@ spec:
                 }
             }
         }
-        
-        stage('Deploy to Kubernetes') {
-            steps {
-                container('kubectl') {
-                    script {
-                        sh 'cp /root/.kube/config /root/.kube/config'
-                        sh 'kubectl apply -f deployment.yaml'
-                    }
-                }
-            }
-        }
     }
 }
