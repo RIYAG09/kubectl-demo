@@ -25,7 +25,7 @@ spec:
     - mountPath: /var/run/docker.sock
       name: docker-sock
   - name: kubectl
-    image: bitnami/kubectl:latest
+    image: riya299/my-kubectl-image:tagname
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -48,6 +48,7 @@ spec:
             steps {
                 container('kubectl') {
                     script {
+                
                         sh 'kubectl apply -f deployment.yaml'
                     }
                 }
