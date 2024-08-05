@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: my-app
 spec:
-  serviceAccountName: user-sa 
   replicas: 2
   selector:
     matchLabels:
